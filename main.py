@@ -21,7 +21,6 @@ def draw(event):
     global value_color
     value = variable.get()
     value_color = hx
-
     if value and value_color:
         canvas.create_oval((event.x - int(value) // 2, event.y - int(value) // 2), (event.x + int(value) // 2, event.y + int(value) // 2), fill=value_color, outline=value_color)
     elif not value and value_color:
@@ -48,16 +47,16 @@ def save():
         mbox.showerror("Ошибка", "Файл с таким именем существует!")
 
 
-def color_sam():
-    global hx, value_color
+def color():
+    global hx
     (rgb, hx) = colorchooser.askcolor()
     cn.config(bg=hx)
 
 
 variable = StringVar(root)
-shr = OptionMenu(root, variable, 1, 1, 5, 10, 15, 20, 25, 30, 35, 40, 50, 60, 70, 80, 90, 100)
+shr = OptionMenu(root, variable, 15, 1, 5, 10, 15, 20, 25, 30, 35, 40, 50, 60, 70, 80, 90, 100)
 
-bytton = tkinter.ttk.Button(root, text='Выбрать цвет', command=color_sam)
+bytton = tkinter.ttk.Button(root, text='Выбрать цвет', command=color)
 btn = tkinter.ttk.Button(root, text='Очистить всё', command=dalate)
 btno = tkinter.ttk.Button(root, text='Заливка', command=zal)
 lable = tkinter.ttk.Label(root, text='Размер кисти:')
