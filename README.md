@@ -19,5 +19,3 @@ pip install tkcap
 
 
 Если есть предложения по дороботке этого проетка, пишите на почту: pythonitpa@gmail.com
-
-''__Если хотите поддержать меня: https://www.donationalerts.com/r/pvkolos__''
