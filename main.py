@@ -23,8 +23,6 @@ def draw(event):
     value_color = hx
     if value and value_color:
         canvas.create_oval((event.x - int(value) // 2, event.y - int(value) // 2), (event.x + int(value) // 2, event.y + int(value) // 2), fill=value_color, outline=value_color)
-    elif not value and value_color:
-        mbox.showerror("Ошибка", "Выберите размер кисти для рисования!")
 
 
 def dalate():
@@ -33,8 +31,8 @@ def dalate():
 
 
 def zal():
-    if value_color:
-        canvas.config(bg=value_color)
+    if hx:
+        canvas.config(bg=hx)
     else:
         mbox.showerror("Ошибка", "Выберите цвет заливки!")
 
@@ -64,8 +62,8 @@ lable_2 = tkinter.ttk.Label(root, text='Цвет кисти (заливки):')
 lable_3 = tkinter.ttk.Label(root, text='Название файла:')
 btn2 = tkinter.ttk.Button(root, text='Save', command=save)
 text = tkinter.ttk.Entry()
-root.bind("<B1-Motion>", draw)
-root.bind('<Button-1>', draw)
+canvas.bind("<B1-Motion>", draw)
+canvas.bind('<Button-1>', draw)
 
 bytton.grid(column=59, row=1)
 lable_3.grid(column=1, row=0, pady=7)
@@ -76,7 +74,7 @@ btno.grid(column=29, row=0, padx=50)
 lable.grid(column=39, row=0, padx=50)
 shr.grid(column=39, row=1, padx=50)
 lable_2.grid(column=59, row=0, padx=25)
-canvas.place(x=0, y=65)
+canvas.place(x=0, y=70)
 cn.grid(column=69, row=1)
 
 root.mainloop()
