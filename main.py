@@ -63,7 +63,7 @@ def zal():
 
 
 def save():
-    if not os.path.exists(f'{text.get()}.jpg'):
+    if not os.path.exists(f'{text.get()}.png'):
         image.save(f'{text.get()}.png')
     else:
         mbox.showerror("Ошибка", "Файл с таким именем существует!")
