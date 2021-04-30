@@ -1,4 +1,4 @@
-from tkinter import *
+from tkinter import Tk, Canvas, OptionMenu, StringVar
 import tkinter
 from tkinter import messagebox as mbox
 import os
@@ -28,6 +28,8 @@ def draw(event):
 
         drawer.ellipse((event.x - int(value) // 2, event.y - int(value) // 2,
                   event.x + int(value) // 2, event.y + int(value) // 2), hx)
+    else:
+        mbox.showerror("Ошибка", "Выберите цвет для рисования!")
 
 
 def dalate():
